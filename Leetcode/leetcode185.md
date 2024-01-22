@@ -1,4 +1,4 @@
-# Ecercício 185 leetcode - Department Top Three Salaries (SQL - Difícil)
+# Exercício 185 leetcode - Department Top Three Salaries (SQL - Difícil)
 
 ## Seleciona as tabelas
 ```
