@@ -7,7 +7,7 @@ SELECT d.Name AS Department, e.Name AS Employee, e.Salary AS Salary FROM
 ```
 ## Cria um rank de todos os pagamentos
 ```
-SELECT e.*, DENSE_RANK() over (PARTITION BY DepartmentId ORDER BY Departmentid, Salary DESC) AS DeptPayRank 
+SELECT e.*, DENSE_RANK() over (PARTITION BY DepartmentId ORDER BY Departmentid, Salary DESC) AS `rank`
 FROM Employee e 
 ) e 
 ```
@@ -15,16 +15,16 @@ FROM Employee e
 ```
 JOIN Department d
 ON e.DepartmentId = d.Id 
-WHERE DeptPayRank <=3
+WHERE `rank` <=3
 ```
 ## Código completo
 ```
 SELECT d.Name AS Department, e.Name AS Employee, e.Salary FROM
 (
-SELECT e.*, DENSE_RANK() over (PARTITION BY DepartmentId ORDER BY Departmentid, Salary DESC) AS DeptPayRank 
+SELECT e.*, DENSE_RANK() over (PARTITION BY DepartmentId ORDER BY Departmentid, Salary DESC) AS `rank`
 FROM Employee e
 ) e
 JOIN Department d
 ON e.DepartmentId = d.Id 
-WHERE DeptPayRank <=3
+WHERE `rank` <=3
 ```
