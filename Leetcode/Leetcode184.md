@@ -1,4 +1,4 @@
-# Exercício 184 leetcode (SQL - Médio)
+# Exercício 184 leetcode - Department Highest Salary (SQL - Médio)
 
 ## Seleciona as tabelas
 ```
